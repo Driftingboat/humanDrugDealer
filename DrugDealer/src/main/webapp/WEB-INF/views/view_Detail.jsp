@@ -58,14 +58,14 @@
                         <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
                         <div class="col-lg-6">
                             <p class="lead fw-normal text-muted mb-0" style="font-size: 12px; text-align:right">
-                                등록일 : {regdate}
+                                등록일 : ${dto.regdate}
                             </p>
-                            <h1 class="fw-bolder" style="color: black; text-align:left;">상품 명</h1>
+                            <h1 class="fw-bolder" style="color: black; text-align:left;">${dto.name}</h1>
                             <hr style="color: darkgray;">
-                               <h2 style="color: black; text-align:left;">{price}</h2><br>
+                               <h2 style="color: black; text-align:left;">${dto.price}</h2><br>
                             <p class="lead fw-normal text-muted mb-0" style=" text-align:left;">
-                                원산지 : {origin}<br>
-                                남은 재고 : {inventory}
+                                원산지 : ${dto.origin}<br>
+                                남은 재고 : ${dto.inventory}
                             </p>
                             <br>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">

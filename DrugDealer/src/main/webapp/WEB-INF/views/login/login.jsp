@@ -98,6 +98,8 @@
                                     <!-- Submit Button-->
                                     <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
                                 </form>
+                                <br>
+                                <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" ><a href="/ex/login/signup" style="color:white;text-decoration:none;">Sign Up</a></button></div>
                             </div>
                         </div>
                     </div>
