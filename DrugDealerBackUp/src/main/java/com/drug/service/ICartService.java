@@ -13,7 +13,7 @@ public interface ICartService {
 	public List<CartDto> selectAll() throws Exception;
 	
 	//장바구니 회원별 확인
-	public List<CartDto> selectId(int cn) throws Exception;
+	public List<CartDto> selectId(String id) throws Exception;
 	
 	//장바구니 개별 삭제 - 상품
 	public void delete(int cn) throws Exception;

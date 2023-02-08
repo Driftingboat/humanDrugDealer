@@ -21,9 +21,9 @@ update cart set cn=#{cn} where id=#{id}
 </update>
 <!-- 장바구니 목록 확인 -->
 <select id="selectId" resultType="com.drug.dto.CartDto">
-select * from cart where cn=#{cn}
+select * from cart where id=#{id}
 </select>
-<!-- 장바구니 전체 확인 -->
+<!-- 장바구니 전체 확인 / 관리자용 -->
 <select id="selectAll" resultType="com.drug.dto.CartDto">
 select * from cart order by cn
 </select>

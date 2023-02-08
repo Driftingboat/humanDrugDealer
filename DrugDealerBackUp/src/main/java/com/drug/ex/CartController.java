@@ -51,24 +51,28 @@ public class CartController {
 		} else {
 			return "/login/login";
 		}
-		if (authority.equals("[member]")) {
-			List<CartDto> dto = cartService.selectAll();
-			model.addAttribute("list", dto);
-			return "/member/cart";
-		} else if (authority.equals("[admin]")) {
-			List<CartDto> dto = cartService.selectAll();
-			model.addAttribute("list", dto);
+		System.out.println(authority);
+		
+		if(authority.equals("[member]")) {
+		UsernamePasswordAuthenticationToken upat = (UsernamePasswordAuthenticationToken)at;
+		String id = upat.getName();
+		List<CartDto> dto=cartService.selectId(id);
+		model.addAttribute("list",dto);
+		return "/member/cart";
+		}else if(authority.equals("[admin]")) {
+			List<CartDto> dto=cartService.selectAll();
+			model.addAttribute("list",dto);
 			return "/admin/cart";
 		}
-		return "/login/login";
+		return"/login/login";
 	}
 
-	@RequestMapping(value = "/cart/selectId", method = RequestMethod.GET)
-	public String selectId(Model model, int cn) throws Exception {
-		System.out.println(cn);
-		List<CartDto> dto = cartService.selectId(cn);
+	@RequestMapping(value= "/cart/selectId", method = RequestMethod.GET)
+	public String selectId(Model model, String id) throws Exception{
+		System.out.println(id);
+		List<CartDto> dto=cartService.selectId(id);
 		System.out.println(dto);
-		model.addAttribute("list", dto);
+		model.addAttribute("list",dto);
 		return "/member/cartDetail";
 	}
 

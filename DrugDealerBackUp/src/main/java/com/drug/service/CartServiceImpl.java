@@ -29,9 +29,9 @@ public class CartServiceImpl implements ICartService {
 	}
 	
 	@Override
-	public List<CartDto> selectId(int cn) throws Exception {
+	public List<CartDto> selectId(String id) throws Exception {
 		ICartDao dao=sqlSession.getMapper(ICartDao.class);
-		return dao.selectId(cn);
+		return dao.selectId(id);
 	}
 
 	@Override

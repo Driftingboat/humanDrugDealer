@@ -22,9 +22,7 @@
                 color: rgba(0, 0, 0, 0.767);
             }
         </style>
-        <script>
-
-        </script>
+        <script src="/resources/jquery/jquery-3.3.1.min.js"></script>
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -63,7 +61,18 @@
                     <form>
                         <thead>
                             <tr>
-                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox" name="allCheck">
+                                <script>
+                                $("#allCheck").click(function(){
+                                	var chk = $("#allCheck").prop("checked");
+                                	if(chk){
+                                		$(".chBox").prop("checked", true);
+                                	}else {
+                                		$(".chBox").prop("checked", false);
+                                	}
+                                });
+                                </script>
+                                </td>
                                 <td colspan="2">상품 정보</td>
                                 <td>옵션</td>
                                 <td>상품 금액</td>
@@ -74,7 +83,12 @@
                         <c:set var="finalPrice" value="0"/>
                         <c:forEach items="${list}" var="dto">
                             <tr class="cart__list__detail">
-                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox" name="chBox" data-cn="${dto.cn }"></td>
+                                <script>
+                                $("#chBox").click(function(){
+                                	$("#allCheck").prop("checked", false);
+                                });
+                                </script>
                                 <td><img src="image/keyboard.jpg" alt="magic keyboard"></td>
                                 <td>
                                     <p><a href="#">${dto.name }</a></p>
@@ -96,7 +110,31 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="3"><input type="checkbox"> <button class="cart__list__optionbtn">선택 상품 삭제</button><button class="cart__list__optionbtn"><a href="/ex/member/cart/deleteAll?id=${id}">장바구니 비우기</button></td>
+                                <td colspan="3"><input type="checkbox" data-cn="${dto.cn }"> <button class="cart__list__optionbtn">선택 상품 삭제</button>
+                                <script>
+                                $(".cart__list__optionbtn").click(function(){
+                                	var confirm_val = confirm("정말 삭제하시겠습니까?");
+                                	
+                                	if(confirm_val) {
+                                		   var checkArr = new Array();
+                                		   
+                                		   $("input[class='chBox']:checked").each(function(){
+                                		    checkArr.push($(this).attr("data-cn"));
+                                		   });
+                                		    
+                                		   $.ajax({
+                                		    url : "/cart/delete",
+                                		    type : "post",
+                                		    data : { chbox : checkArr },
+                                		    success : function(){
+                                		     location.href = "/cart/cartList";
+                                		    }
+                                		   });
+                                		  } 
+                                		 });
+                                
+                                </script>
+                                <button class="cart__list__optionbtn"><a href="/ex/member/cart/deleteAll?id=${id}">장바구니 비우기</button></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

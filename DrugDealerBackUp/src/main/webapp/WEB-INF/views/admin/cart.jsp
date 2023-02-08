@@ -103,7 +103,7 @@
                             </tr>
                         </tfoot>
                 </table>
-                <h5>결제 예정 금액 : ${finalPrice }원</h5>
+ 
                 <div class="cart__mainbtns">
                     <button class="cart__bigorderbtn left"><a href="/ex/selectAll">쇼핑 계속하기</a></button>
                     <button class="cart__bigorderbtn right"><a href="#">주문하기</a></button>
