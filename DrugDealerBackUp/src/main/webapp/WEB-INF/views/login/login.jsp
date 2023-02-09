@@ -18,12 +18,11 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                    <a class="navbar-brand" href="/ex/">Start Bootstrap</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/ex/">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
@@ -52,7 +51,7 @@
                     <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                         <div class="text-center mb-5">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder">Create Account</h1>
+                            <h1 class="fw-bolder">Page For Login</h1>
                             <p class="lead fw-normal text-muted mb-0">We'd love to visit of you</p>
                         </div>
                         <div class="row gx-5 justify-content-center">
@@ -64,60 +63,25 @@
                                 <!-- To make this form functional, sign up at-->
                                 <!-- https://startbootstrap.com/solution/contact-forms-->
                                 <!-- to get an API token!-->
-                                <form id="contactForm" action="/ex/login/signup" method="POST">
-                                    <!-- id input-->
+                                <form id="contactForm" action="/ex/login" method="POST">
+                                    <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="id" name="id" type="text" placeholder="Enter your ID" data-sb-validations="required" />
-                                        <label for="id">ID</label>
-                                        <div class="invalid-feedback" data-sb-feedback="id:required">A ID is required.</div>
+                                        <input class="form-control" id="name" name="id" type="text" placeholder="Enter your ID" data-sb-validations="required" />
+                                        <label for="name">ID</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">A ID is required.</div>
                                     </div>
-                                    <!-- Password input-->
+                                    <!-- Email address input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="password" name="pw" type="password" placeholder="Enter your PW" data-sb-validations="required" />
                                         <label for="password" >PW</label>
                                         <div class="invalid-feedback" data-sb-feedback="password:required">An PW is required.</div>
                                         <!--div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div-->
-                                    </div> 
-                                    <!-- Password check input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="password2" name="pwCheck" type="password" placeholder="Enter your PW" data-sb-validations="required" />
-                                        <label for="password2" >PW Check</label>
-                                        <div class="invalid-feedback" data-sb-feedback="password2:required">An PW Check is required.</div>
-                                        <!--div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div-->
-                                    </div>      
-                                    <!-- name input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name" data-sb-validations="required" />
-                                        <label for="name" >Name</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">An Name is required.</div>
-                                        <!--div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div-->
-                                    </div>  
-                                    <!-- Password address input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" name="email" type="text" placeholder="Enter your email" data-sb-validations="required" />
-                                        <label for="email" >E-mail</label>
-                                        <div class="invalid-feedback" data-sb-feedback="email:required">An PW is required.</div>
-                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                    </div>                         
-                                    <!-- Password address input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="address" name="address" type="text" placeholder="Enter your PW" data-sb-validations="required" />
-                                        <label for="address" >Address</label>
-                                        <div class="invalid-feedback" data-sb-feedback="address:required">An PW is required.</div>
-                                        <!--div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div-->
-                                    </div>  
-                                    <!-- Password address input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" name="phone" type="text" placeholder="Enter your PW" data-sb-validations="required" />
-                                        <label for="phone" >Phone</label>
-                                        <div class="invalid-feedback" data-sb-feedback="phone:required">An PW is required.</div>
-                                        <!--div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div-->
-                                    </div>  
+                                    </div>                                   
                                     <!-- Submit success message-->
                                     <!---->
                                     <!-- This is what your users will see when the form-->
                                     <!-- has successfully submitted-->
-                                     <!-- div class="d-none" id="submitSuccessMessage">
+                                    <!--  div class="d-none" id="submitSuccessMessage">
                                         <div class="text-center mb-3">
                                             <div class="fw-bolder">Form submission successful!</div>
                                             To activate this form, sign up at
@@ -132,7 +96,9 @@
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error!</div></div>
                                     <!-- Submit Button-->
                                     <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
-                                </form>                             
+                                </form>
+                                <br>
+                                <a href="/ex/login/signup" style="color:white;text-decoration:none;"><div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" >Sign Up</button></div></a>
                             </div>
                         </div>
                     </div>
@@ -180,7 +146,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
